@@ -19,6 +19,7 @@ public class MatrimonyController {
 
 	@PostMapping("/captureInterest")
 	public String captureInterest(@RequestBody UserInterest userInterest) {
+		System.out.println(" in controller");
 		return 	matrimonyService.captureInterest(userInterest);		
 
 	}

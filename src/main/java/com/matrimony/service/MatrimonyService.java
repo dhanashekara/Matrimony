@@ -23,6 +23,7 @@ public class MatrimonyService {
 
 	public String captureInterest(UserInterest interest) {
 
+		System.out.println("in service");
 		if (repo.save(interest) != null)
 			return "interest captured";
 		else
@@ -33,6 +34,7 @@ public class MatrimonyService {
 	public String updateInterest(long id,String status ) {
 		
 		UserInterest interest =repo.findById(id).get();
+	
 		
 		interest.setStatus(status);
 		if(repo.save(interest)!=null)
@@ -45,6 +47,7 @@ public class MatrimonyService {
 		
 		ArrayList<User> usersList = new ArrayList<>();
 		 usersList = userRepo.findByCityAndGender(city,gender);
+		 
 		
 		if(usersList != null && !usersList.isEmpty())
 			return usersList;
